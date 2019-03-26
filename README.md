@@ -1,6 +1,6 @@
 # server-checker
 Checks STEEM public RPC servers (full nodes) whether accessible or not.
-
+<pre>
 Usage: java -jar SteemServerChecker.jar [-hV] [-v]... [-a=<account>] [-o=<outputFile>]
                             [-p=<protocol>] [-s=<serverTimeout>]
                             [-t=<steemitTimeout>] [-u=<url>]
@@ -17,3 +17,4 @@ Usage: java -jar SteemServerChecker.jar [-hV] [-v]... [-a=<account>] [-o=<output
   -v, --verbose             Verbose mode. Helpful for troubleshooting. Multiple -v
                               options increase the verbosity.
   -V, --version             Print version information and exit.
+</pre>
