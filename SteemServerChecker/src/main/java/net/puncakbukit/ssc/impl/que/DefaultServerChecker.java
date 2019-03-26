@@ -123,8 +123,12 @@ public class DefaultServerChecker implements ServerChecker {
 			} catch (SteemCommunicationException | SteemResponseException e) {
 				// Logs and resumes
 				log.error("check", e);
-				cause = e.getCause()
-						.toString();
+				if (e.getCause() == null) {
+					cause = e.toString();
+				} else {
+					cause = e.getCause()
+							.toString();
+				}
 			}
 			return new DefaultServerChecker(protocol, server, timeout, account, status, cause);
 		} catch (URISyntaxException e) {

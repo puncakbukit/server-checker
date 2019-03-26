@@ -171,6 +171,9 @@ public class SteemServerChecker implements Runnable {
 				//
 				// Checks the server if it is UP or DOWN.
 				//
+				if (verbose.length > 0) {
+					LOG.debug("run - " + server.server);
+				}
 				ServerChecker checker = new DefaultServerChecker.Builder().withProtocol(protocol)
 						.withServer(server.server)
 						.withTimeout(serverTimeout)
@@ -183,6 +186,9 @@ public class SteemServerChecker implements Runnable {
 				server.lastChanged = findLastChanged(server, servers);
 				server.lastChecked = Instant.now()
 						.toString();
+				if (verbose.length > 0) {
+					LOG.debug("run - " + server);
+				}
 			} catch (Exception e) {
 				// logs and resumes
 				LOG.error("run", e);
