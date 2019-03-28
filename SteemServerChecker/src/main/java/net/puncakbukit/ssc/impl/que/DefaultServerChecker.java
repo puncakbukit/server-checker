@@ -12,8 +12,6 @@ import eu.bittrade.libs.steemj.SteemJ;
 import eu.bittrade.libs.steemj.base.models.AccountName;
 import eu.bittrade.libs.steemj.base.models.SignedBlockWithInfo;
 import eu.bittrade.libs.steemj.configuration.SteemJConfig;
-import eu.bittrade.libs.steemj.exceptions.SteemCommunicationException;
-import eu.bittrade.libs.steemj.exceptions.SteemResponseException;
 import net.puncakbukit.ssc.SteemServerCheckerException;
 import net.puncakbukit.ssc.que.ServerChecker;
 import net.puncakbukit.util.que.CheckQueryUtil;
@@ -120,7 +118,7 @@ public class DefaultServerChecker implements ServerChecker {
 				} else {
 					cause = "Block or block id is null.";
 				}
-			} catch (SteemCommunicationException | SteemResponseException e) {
+			} catch (Exception e) {
 				// Logs and resumes
 				log.error("check", e);
 				if (e.getCause() == null) {

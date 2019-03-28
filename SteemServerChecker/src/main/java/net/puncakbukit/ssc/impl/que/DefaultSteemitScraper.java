@@ -93,19 +93,24 @@ public class DefaultSteemitScraper implements SteemitScraper {
 			Elements rows = table.select("tr");
 			List<SteemServer> servers = new ArrayList<>();
 			for (int i = 1; i < rows.size(); i++) { // first row is the col names so skip it.
-				Elements cols = rows.get(i)
-						.select("td");
-				String ssl = cols.get(1)
-						.text();
-				String status = cols.get(5)
-						.text();
-				if (status.equals("Operational") && ssl.equals("YES")) {
-					SteemServer server = new SteemServer();
-					server.server = cols.get(0)
+				try {
+					Elements cols = rows.get(i)
+							.select("td");
+					String ssl = cols.get(1)
 							.text();
-					server.ranBy = cols.get(4)
+					String status = cols.get(5)
 							.text();
-					servers.add(server);
+					if (status.equals("Operational") && ssl.equals("YES")) {
+						SteemServer server = new SteemServer();
+						server.server = cols.get(0)
+								.text();
+						server.ranBy = cols.get(4)
+								.text();
+						servers.add(server);
+					}
+				} catch (Exception e) {
+					// logs and resumes
+					log.warn("scrape", e);
 				}
 			}
 			return new DefaultSteemitScraper(url, timeout, servers);

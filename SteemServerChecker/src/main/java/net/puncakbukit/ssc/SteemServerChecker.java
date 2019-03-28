@@ -79,9 +79,9 @@ public class SteemServerChecker implements Runnable {
 	 */
 	private String findLastChanged(SteemServer server, List<SteemServer> servers) {
 		for (SteemServer s : servers) {
-			if (s.server.equals(server.server)) {
-				if (s.status.equals(server.status)) {
-					if (s.cause.equals(server.cause)) {
+			if (s.server != null && s.server.equals(server.server)) {
+				if (s.status != null && s.status.equals(server.status)) {
+					if (s.cause != null && s.cause.equals(server.cause)) {
 						return s.lastChanged;
 					} else {
 						return Instant.now()
