@@ -37,7 +37,7 @@ public class DefaultSteemitScraper implements SteemitScraper {
 		}
 
 		@Override
-		public net.puncakbukit.ssc.que.SteemitScraper.Builder withDocument(Document document) {
+		public SteemitScraper.Builder withDocument(Document document) {
 			this.document = document;
 			return this;
 		}

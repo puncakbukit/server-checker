@@ -160,7 +160,7 @@ public class SteemServerChecker implements Runnable {
 		if (!new File(outputFile).exists()) {
 			FileCommandUtil.spitFile("", outputFile, StandardCharsets.UTF_8);
 		}
-		SteemServer[] arr = gson.fromJson(FileQueryUtil.slurpFile(outputFile, StandardCharsets.UTF_8),
+		SteemServer[] arr = new Gson().fromJson(FileQueryUtil.slurpFile(outputFile, StandardCharsets.UTF_8),
 				SteemServer[].class);
 		List<SteemServer> servers = Arrays.asList(arr == null ? new SteemServer[0] : arr);
 		//

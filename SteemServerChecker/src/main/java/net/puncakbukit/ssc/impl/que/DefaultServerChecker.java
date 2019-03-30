@@ -12,6 +12,7 @@ import eu.bittrade.libs.steemj.SteemJ;
 import eu.bittrade.libs.steemj.base.models.AccountName;
 import eu.bittrade.libs.steemj.base.models.SignedBlockWithInfo;
 import eu.bittrade.libs.steemj.configuration.SteemJConfig;
+import net.puncakbukit.ssc.SteemServer;
 import net.puncakbukit.ssc.SteemServerCheckerException;
 import net.puncakbukit.ssc.que.ServerChecker;
 import net.puncakbukit.util.que.CheckQueryUtil;
@@ -107,14 +108,14 @@ public class DefaultServerChecker implements ServerChecker {
 			myConfig.setResponseTimeout(timeout);
 			CheckQueryUtil.checkNotNullNorEmpty(account, "account");
 			myConfig.setDefaultAccount(new AccountName(account));
-			String status = ServerChecker.DOWN;
+			String status = SteemServer.DOWN;
 			String cause = "";
 			try {
 				SteemJ steemJ = new SteemJ();
 				SignedBlockWithInfo block = steemJ.getBlock(steemJ.getDynamicGlobalProperties()
 						.getLastIrreversibleBlockNum());
 				if (block != null && block.getBlockId() != null) {
-					status = ServerChecker.UP;
+					status = SteemServer.UP;
 				} else {
 					cause = "Block or block id is null.";
 				}

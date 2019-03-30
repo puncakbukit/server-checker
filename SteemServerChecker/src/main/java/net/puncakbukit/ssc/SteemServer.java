@@ -10,6 +10,10 @@ import java.util.Objects;
  *
  */
 public class SteemServer {
+
+	public static final String UP = "UP";
+	public static final String DOWN = "DOWN";
+
 	public String server;
 	public String ranBy;
 	public String status;

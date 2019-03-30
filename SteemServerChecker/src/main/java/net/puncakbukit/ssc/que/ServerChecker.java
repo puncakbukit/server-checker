@@ -29,10 +29,6 @@ public interface ServerChecker {
 
 	}
 
-	static final String UP = "UP";
-
-	static final String DOWN = "DOWN";
-
 	/**
 	 * Checks the server.
 	 * 
