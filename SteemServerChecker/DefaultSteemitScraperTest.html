@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Public Websocket Servers - Steem Center</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Public_Websocket_Servers","wgTitle":"Public Websocket Servers","wgCurRevisionId":11675,"wgRevisionId":11675,"wgArticleId":735,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Technology"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Public_Websocket_Servers","wgRelevantArticleId":735,"wgRequestId":"6682c82e991524ebacb442f3","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":false,"dialogs":false,"preview":false,"publish":false}});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.27.1"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Steem Center (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.steem.center/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Steem Center Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Public_Websocket_Servers rootpage-Public_Websocket_Servers skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Public Websocket Servers</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Steem Center</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>RPC Servers (also known as Steem RPC Full Nodes) are used by applications built on the <a href="/index.php?title=Steem_(jp)" title="Steem (jp)">Steem</a> platform.
+</p><p>Example usage (Python with Piston):
+</p><p><br />
+</p>
+<pre>&gt;&gt;&gt; from piston import Steem
+&gt;&gt;&gt; s = Steem('wss://steemd.steemit.com/')
+&gt;&gt;&gt; s.info()
+{'time': '2017-08-21T21:41:39', 'recent_slots_filled': '340282366920938463463374607431768211455', 'current_sbd_supply': '3447404.692 SBD', 'participation_count': 128, 'confidential_supply': '0.000 STEEM', 'current_reserve_ratio': 0, 'last_irreversible_block_num': 14779407, 'virtual_supply': '257047362.471 STEEM', 'pending_rewarded_vesting_shares': '282487098.589016 VESTS', 'sbd_interest_rate': 0, 'current_aslot': 14838833, 'maximum_block_size': 65536, 'num_pow_witnesses': 172, 'total_vesting_shares': '377858164971.920552 VESTS', 'vote_power_reserve_rate': 10, 'current_supply': '253955519.698 STEEM', 'id': 0, 'head_block_id': '00e1841e04d47525274d029f80a7e6a25cf0d85a', 'average_block_size': 0, 'confidential_sbd_supply': '0.000 SBD', 'sbd_print_rate': 10000, 'current_witness': 'gtg', 'total_vesting_fund_steem': '183146072.646 STEEM', 'pending_rewarded_vesting_steem': '136656.817 STEEM', 'total_reward_fund_steem': '0.000 STEEM', 'head_block_number': 14779422, 'total_reward_shares2': '0', 'max_virtual_bandwidth': '0', 'total_pow': 514415}
+
+</pre>
+<table class="wikitable" border="1">
+
+<tr>
+<th> Server
+</th>
+<th> SSL
+</th>
+<th> WSS
+</th>
+<th> JSON
+</th>
+<th> Ran By
+</th>
+<th> Status
+</th></tr>
+<tr>
+<td> api.steemit.com
+</td>
+<td> YES
+</td>
+<td> NO
+</td>
+<td> YES
+</td>
+<td> Steemit Inc.
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> api.steemitdev.com
+</td>
+<td> YES
+</td>
+<td> NO
+</td>
+<td> YES
+</td>
+<td> Steemit Inc.
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> api.steemitstage.com
+</td>
+<td> YES
+</td>
+<td> NO
+</td>
+<td> YES
+</td>
+<td> Steemit Inc.
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> steemd.steemit.com
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> Steemit Inc.
+</td>
+<td> <font color="red">Disabled (No longer maintained)</font>
+</td></tr>
+<tr>
+<td> steemd.steemitstage.com
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> Steemit Inc.
+</td>
+<td> <font color="red">Disabled (No longer maintained)</font>
+</td></tr>
+<tr>
+<td> steemd.steemitdev.com
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> Steemit Inc.
+</td>
+<td> <font color="red">Disabled (No longer maintained)</font>
+</td></tr>
+<tr>
+<td> api.steem.house
+</td>
+<td> YES
+</td>
+<td> NO
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@gtg">@gtg</a>
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> appbasetest.timcliff.com
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@timcliff">@timcliff</a>
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> appbase.buildteam.io
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@themarkymark">@themarkymark</a>
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> gtg.steem.house:8090
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@gtg">@gtg</a>
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> node.steem.ws
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@jesta">@jesta</a>
+</td>
+<td> <font color="red">Disabled (No longer maintained)</font>
+</td></tr>
+<tr>
+<td> rpc.buildteam.io
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@themarkymark">@themarkymark</a>
+</td>
+<td> <font color="red">Disabled (No longer maintained)</font>
+</td></tr>
+<tr>
+<td> rpc.curiesteem.com
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@curie">@curie</a>
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> rpc.steemliberator.com
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@netuoso">@netuoso</a>
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> rpc.steemviz.com
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@ausbitbank">@ausbitbank</a>
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> steemd.minnowsupportproject.org
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@followbtcnews">@followbtcnews</a>
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> steemd.pevo.science
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@pharesim">@pharesim</a>
+</td>
+<td> <font color="red">Disabled (No longer maintained)</font>
+</td></tr>
+<tr>
+<td> steemd.privex.io
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@privex">@privex</a>
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+<tr>
+<td> steemd.steemgigs.org
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@surpassinggogle">@steemgigs</a>
+</td>
+<td> <font color="red">Disabled (No longer maintained)</font>
+</td></tr>
+<tr>
+<td> rpc.usesteem.com
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> YES
+</td>
+<td> <a rel="nofollow" class="external text" href="https://www.steemit.com/@themarkymark">@themarkymark</a>
+</td>
+<td> <font color="green">Operational</font>
+</td></tr>
+
+</table>
+<p>The table above is updated manually from time to time and may, therefore, be outdated. Automatically updated tables of RPC nodes are available here:
+</p>
+<ul><li> <a rel="nofollow" class="external free" href="https://geo.steem.pl/">https://geo.steem.pl/</a></li>
+<li> <a rel="nofollow" class="external free" href="http://steemistry.com/nodes/">http://steemistry.com/nodes/</a></li></ul>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Minimum_Requirements_for_Running_Full_RPC_Node">Minimum Requirements for Running Full RPC Node</span></h3>
+<p>RAM: Around 262gb if shared_memory.bin is kept in RAM. Recommended at least 256gb.
+</p><p>SSD: At least 100GB if shared_memory is in RAM. At least 500gb if shared_memory is kept on disk (be warned, you need very very high-end NVME drives to use shared_memory on disk).
+</p><p>BANDWIDTH: 100mbps minimum for a public node. 500 to 1000mbps (1gbit) recommended.
+</p>
+<h2><span class="mw-headline" id="Related_articles">Related articles</span></h2>
+<ul><li> <a href="/index.php?title=Steem" title="Steem">Steem</a></li>
+<li> <a href="/index.php?title=Steemd_Software" title="Steemd Software">Steemd Software</a></li></ul>
+<h2><span class="mw-headline" id="In_other_languages">In other languages</span></h2>
+<ul><li> <a href="/index.php?title=%E6%97%A5%E6%9C%AC%E8%AA%9E" title="日本語" class="mw-redirect">日本語</a> (Japanese): <a href="/index.php?title=%E5%85%AC%E9%96%8BWebSocket%E3%82%B5%E3%83%BC%E3%83%90" title="公開WebSocketサーバ">公開WebSocketサーバ</a></li></ul>
+<p><br />
+</p>
+<hr />
+<p><br />
+</p>
+<table class="wikitable" style="margin: auto;">
+<tr>
+<td> Help keep this wiki page updated. Register, click in <a rel="nofollow" class="external text" href="https://www.steem.center/index.php?title=Public_Websocket_Servers&amp;action=edit">edit</a>, add or modify the text and save. <br />If you're already a steemian you can be rewarded with steem, see how in <a rel="nofollow" class="external text" href="https://steemit.com/introduceyourself/@steemcenterwiki/introduction-rewarding-steem-center-wiki-editors-with-steem-too">@steemcenterwiki</a>.
+</td></tr>
+</table>
+<p><br />
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20190326103732
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.012 seconds
+Real time usage: 0.012 seconds
+Preprocessor visited node count: 40/1000000
+Preprocessor generated node count: 76/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key steemcenter:pcache:idhash:735-0!*!0!!*!*!* and timestamp 20190326103732 and revision id 11675
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://www.steem.center/index.php?title=Public_Websocket_Servers&amp;oldid=11675">http://www.steem.center/index.php?title=Public_Websocket_Servers&amp;oldid=11675</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/index.php?title=Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/index.php?title=Category:Technology" title="Category:Technology">Technology</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="/index.php?title=Special:CreateAccount&amp;returnto=Public+Websocket+Servers" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=Public+Websocket+Servers" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/index.php?title=Public_Websocket_Servers"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="/index.php?title=Talk:Public_Websocket_Servers&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/index.php?title=Public_Websocket_Servers" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="/index.php?title=Public_Websocket_Servers&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/index.php?title=Public_Websocket_Servers&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Steem Center [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/index.php?title=Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/index.php?title=Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="/index.php?title=Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="/index.php?title=Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/index.php?title=Special:WhatLinksHere/Public_Websocket_Servers" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/index.php?title=Special:RecentChangesLinked/Public_Websocket_Servers" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/index.php?title=Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="/index.php?title=Public_Websocket_Servers&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/index.php?title=Public_Websocket_Servers&amp;oldid=11675" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/index.php?title=Public_Websocket_Servers&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 16 January 2019, at 01:29.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a> unless otherwise noted.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="/index.php?title=Steem_Center:Privacy_policy" title="Steem Center:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/index.php?title=Steem_Center:About" title="Steem Center:About">About Steem Center</a></li>
+											<li id="footer-places-disclaimer"><a href="/index.php?title=Steem_Center:General_disclaimer" title="Steem Center:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by/4.0/"><img src="/resources/assets/licenses/cc-by.png" alt="Creative Commons Attribution" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":29});});</script>
+	</body>
+</html>

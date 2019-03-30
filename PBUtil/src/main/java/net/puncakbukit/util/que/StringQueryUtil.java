@@ -15,6 +15,7 @@ public class StringQueryUtil {
 	 * @return
 	 */
 	public static String removeHTML(String string) {
+		CheckQueryUtil.checkNotNull(string, "string");
 		return string.replaceAll("(?s)<[a-zA-Z]+[^>]*>.*</[a-zA-Z]+>", "");
 	}
 

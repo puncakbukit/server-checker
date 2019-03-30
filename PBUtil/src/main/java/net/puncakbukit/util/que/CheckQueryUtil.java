@@ -23,6 +23,18 @@ public class CheckQueryUtil {
 	}
 
 	/**
+	 * Checks if an object is not null.
+	 * 
+	 * @param object
+	 * @param name
+	 */
+	public static void checkNotNull(Object object, String name) {
+		if (object == null) {
+			throw new PBUtilException(name + " is null!");
+		}
+	}
+
+	/**
 	 * Checks if a string is not null nor empty.
 	 * 
 	 * @param string

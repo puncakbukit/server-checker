@@ -29,10 +29,17 @@ public class DefaultSteemitScraper implements SteemitScraper {
 		private String url;
 		private int timeout;
 		private List<SteemServer> servers;
+		private Document document;
 
 		@Override
 		public SteemitScraper build() {
-			return new DefaultSteemitScraper(url, timeout, servers);
+			return new DefaultSteemitScraper(url, timeout, servers, document);
+		}
+
+		@Override
+		public net.puncakbukit.ssc.que.SteemitScraper.Builder withDocument(Document document) {
+			this.document = document;
+			return this;
 		}
 
 		@Override
@@ -58,11 +65,18 @@ public class DefaultSteemitScraper implements SteemitScraper {
 	private final String url;
 	private final int timeout;
 	private final List<SteemServer> servers;
+	private final Document document;
 
-	private DefaultSteemitScraper(String url, int timeout, List<SteemServer> servers) {
+	private DefaultSteemitScraper(String url, int timeout, List<SteemServer> servers, Document document) {
 		this.url = url;
 		this.timeout = timeout;
 		this.servers = servers;
+		this.document = document;
+	}
+
+	@Override
+	public Document getDocument() {
+		return document;
 	}
 
 	@Override
@@ -80,43 +94,49 @@ public class DefaultSteemitScraper implements SteemitScraper {
 		return url;
 	}
 
-	@Override
-	public SteemitScraper scrape() {
+	private Document retrieveDoc() {
 		try {
 			CheckQueryUtil.checkNotNullNorEmpty(url, "url");
 			Connection connection = Jsoup.connect(url);
 			CheckQueryUtil.checkNotMinus(timeout, "timeout");
 			connection.timeout(timeout);
-			Document doc = connection.get();
-			log.info(doc.title());
-			Element table = doc.selectFirst(".wikitable");
-			Elements rows = table.select("tr");
-			List<SteemServer> servers = new ArrayList<>();
-			for (int i = 1; i < rows.size(); i++) { // first row is the col names so skip it.
-				try {
-					Elements cols = rows.get(i)
-							.select("td");
-					String ssl = cols.get(1)
-							.text();
-					String status = cols.get(5)
-							.text();
-					if (status.equals("Operational") && ssl.equals("YES")) {
-						SteemServer server = new SteemServer();
-						server.server = cols.get(0)
-								.text();
-						server.ranBy = cols.get(4)
-								.text();
-						servers.add(server);
-					}
-				} catch (Exception e) {
-					// logs and resumes
-					log.warn("scrape", e);
-				}
-			}
-			return new DefaultSteemitScraper(url, timeout, servers);
+			return connection.get();
 		} catch (IOException e) {
-			throw new SteemServerCheckerException("scrape", e);
+			throw new SteemServerCheckerException("retrieveDoc", e);
 		}
+	}
+
+	@Override
+	public SteemitScraper scrape() {
+		final Document document = this.document == null ? retrieveDoc() : this.document;
+		log.info("scrape - " + document.title());
+		final Element table = document.selectFirst(".wikitable");
+		final Elements rows = table.select("tr");
+		final List<SteemServer> servers = new ArrayList<>();
+		for (int i = 1; i < rows.size(); i++) { // first row is the col names so skip it.
+			try {
+				final Elements cols = rows.get(i)
+						.select("td");
+				final String ssl = cols.get(1)
+						.text();
+				final String status = cols.get(5)
+						.text();
+				if (status.equals("Operational") && ssl.equals("YES")) {
+					SteemServer server = new SteemServer();
+					server.server = cols.get(0)
+							.text()
+							.trim();
+					server.ranBy = cols.get(4)
+							.text()
+							.trim();
+					servers.add(server);
+				}
+			} catch (Exception e) {
+				// logs and resumes
+				log.warn("scrape", e);
+			}
+		}
+		return new DefaultSteemitScraper(url, timeout, servers, document);
 	}
 
 }

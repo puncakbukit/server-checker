@@ -2,6 +2,8 @@ package net.puncakbukit.ssc.que;
 
 import java.util.List;
 
+import org.jsoup.nodes.Document;
+
 import net.puncakbukit.ssc.SteemServer;
 
 /**
@@ -19,13 +21,21 @@ public interface SteemitScraper {
 
 		SteemitScraper build();
 
+		Builder withDocument(Document document);
+
 		Builder withServers(List<SteemServer> servers);
 
 		Builder withTimeout(int i);
 
 		Builder withURL(String string);
-
 	}
+
+	/**
+	 * Jsoup document containing site content.
+	 * 
+	 * @return
+	 */
+	Document getDocument();
 
 	/**
 	 * List of servers scraped.

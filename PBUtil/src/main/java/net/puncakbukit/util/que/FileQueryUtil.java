@@ -23,6 +23,8 @@ public class FileQueryUtil {
 	 * @return
 	 */
 	public static String slurpFile(String filename, Charset encoding) {
+		CheckQueryUtil.checkNotNullNorEmpty(filename, "filename");
+		CheckQueryUtil.checkNotNull(encoding, "encoding");
 		try {
 			return new String(Files.readAllBytes(Paths.get(filename)), encoding);
 		} catch (IOException e) {
