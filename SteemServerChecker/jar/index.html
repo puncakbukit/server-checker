@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-	Eventually by HTML5 UP
+	Dimension by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
@@ -10,39 +10,55 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<h1>STEEM Public Server Checker</h1>
-				<p>A simple checker for telling the world when a STEEM server<br />
-				is UP or DOWN. Brought to you by <a href="http://steemit.com/@puncakbukit">@puncakbukit</a> (<a href="https://app.steemconnect.com/sign/account-witness-vote?witness=puncakbukit&approve=1" class="link"><span class="label">Vote For Witness <span style="color:red">❤️</span></span></a>).</p>
-			</header>
-			
-		<!-- Header -->
-			<div id="content">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-diamond"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>STEEM Public Server Checker</h1>
+								<p>A simple checker for telling the world when a STEEM server<br />
+								is UP or DOWN. Brought to you by  <a href="http://steemit.com/@puncakbukit">@puncakbukit</a>.<br />
+								<a href="https://app.steemconnect.com/sign/account-witness-vote?witness=puncakbukit&approve=1" class="link"><span class="label">Vote For Witness <span style="color:red">❤️</span></span></a></p>
+							</div>
+							<div id="server_table"></div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="https://steemit.com/utopian-io/@puncakbukit/steem-server-checker-to-check-public-rpc-servers-full-nodes" class="link"><span class="label">README</span></a></li>
+								<li><a href="https://www.puncakbukit.net/" class="link"><span class="label">Puncakbukit.net</span></a></li>
+								<li><a href="https://github.com/puncakbukit/server-checker" class="link"><span class="label">GitHub</span></a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>. Image: <a href="https://pixabay.com/illustrations/software-development-virtual-3682509/">pixabay</a></p>
+					</footer>
+
 			</div>
-			
-		<!-- Footer -->
-			<footer id="footer">
-			&nbsp;<br />
-				<ul class="icons">
-					<li><a href="https://www.puncakbukit.net/" class="link"><span class="label">Puncakbukit.net</span></a></li>
-					<li><a href="https://app.steemconnect.com/sign/account-witness-vote?witness=puncakbukit&approve=1" class="link"><span class="label">Vote For Witness <span style="color:red">❤️</span></span></a></li>
-					<li><a href="https://github.com/puncakbukit/server-checker" class="link"><span class="label">GitHub</span></a></li>
-					<li><a href="https://steemit.com/utopian-io/@puncakbukit/steem-server-checker-to-check-public-rpc-servers-full-nodes" class="link"><span class="label">README</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
+
+		<!-- BG -->
+			<div id="bg"></div>
 
 		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-			document.getElementById("content").appendChild(buildHtmlTable(servers));
+			document.getElementById("server_table").appendChild(buildHtmlTable(servers));
 			</script>
 
 	</body>
