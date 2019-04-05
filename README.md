@@ -1,5 +1,6 @@
 # server-checker
 Checks STEEM public RPC servers (full nodes) whether accessible or not.
+<ul><li><a href="https://steemit.com/utopian-io/@puncakbukit/steem-server-checker-to-check-public-rpc-servers-full-nodes">STEEM Server Checker: To Check Public RPC Servers (Full Nodes)</a></li><li><a href="https://steemit.com/utopian-io/@puncakbukit/steem-server-finder-how-to-use-the-json">STEEM Server Finder: How To Use The JSON</a></li></ul>
 <pre>
 Usage: java -jar SteemServerChecker.jar [-hV] [-v]... [-a=<account>] [-o=<outputFile>]
                             [-p=<protocol>] [-s=<serverTimeout>]
